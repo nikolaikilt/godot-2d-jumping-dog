@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://uptxyacbdaq2"]
+
+[ext_resource type="Script" uid="uid://bsfm6pnt53rwj" path="res://scripts/crate.gd" id="1_dwt0d"]
+[ext_resource type="Texture2D" uid="uid://djqytl3uyniq2" path="res://assets/big-crate.png" id="2_dwt0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq5dj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dwt0d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ybftx"]
+b = Vector2(32, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bq5dj"]
+b = Vector2(31, 0)
+
+[node name="crate" type="AnimatableBody2D" unique_id=598942381]
+collision_layer = 4
+script = ExtResource("1_dwt0d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1966641143]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_bq5dj")
+animation = &"idle"
+frame_progress = 0.2768196
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892547122]
+position = Vector2(-15, -14)
+shape = SubResource("SegmentShape2D_ybftx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1810443378]
+position = Vector2(-1, -6)
+rect = Rect2(-14, -10, 31, 31)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=956548261]
+z_index = -1
+position = Vector2(-15, 14)
+shape = SubResource("SegmentShape2D_bq5dj")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
