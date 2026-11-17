@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnqb71h6bs4ds"
-path="res://.godot/imported/run4.png-3bc9a33bdf643eb9e5f0ce0fef87702b.ctex"
+uid="uid://chbws2gvm7pow"
+path="res://.godot/imported/idlenew.png-03693be5a3b76f6f3f91774ebc0794ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gogo_sprites/run/run4.png"
-dest_files=["res://.godot/imported/run4.png-3bc9a33bdf643eb9e5f0ce0fef87702b.ctex"]
+source_file="res://assets/gogo_sprites/idle/idlenew.png"
+dest_files=["res://.godot/imported/idlenew.png-03693be5a3b76f6f3f91774ebc0794ee.ctex"]
 
 [params]
 

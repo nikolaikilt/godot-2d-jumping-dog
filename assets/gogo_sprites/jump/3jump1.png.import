@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceu213fb03rv3"
-path="res://.godot/imported/idle4.png-84f531dbe7cb38b0f59814770129c30b.ctex"
+uid="uid://dn6uvy5amvr8e"
+path="res://.godot/imported/3jump1.png-2ee154c3ff63d4cda56c44609ae44bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gogo_sprites/idle/idle4.png"
-dest_files=["res://.godot/imported/idle4.png-84f531dbe7cb38b0f59814770129c30b.ctex"]
+source_file="res://assets/gogo_sprites/jump/3jump1.png"
+dest_files=["res://.godot/imported/3jump1.png-2ee154c3ff63d4cda56c44609ae44bfc.ctex"]
 
 [params]
 
