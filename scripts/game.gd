@@ -17,7 +17,7 @@ func _on_enemy_timer_timeout() -> void:
 	var enemy_scene = enemy_scenes.pick_random()
 	var enemy_instance = enemy_scene.instantiate()
 	
-	if enemy_instance.name == "cratedouble":
+	if enemy_instance.name == "cratedouble" or enemy_instance.name == "carrot_crane":
 		enemy_instance.position = Vector2(187,120)
 	else: 
 		enemy_instance.position = Vector2(187,150)

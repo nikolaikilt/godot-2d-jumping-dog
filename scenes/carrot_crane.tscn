@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://wb2i2at2m6xc"]
+
+[ext_resource type="Script" uid="uid://cdptf2agigaik" path="res://scenes/carrot_crane.gd" id="1_00hs5"]
+[ext_resource type="Texture2D" uid="uid://bf5uo8v1tsik8" path="res://assets/big-crate_CARROT.png" id="1_psths"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bq5dj"]
+b = Vector2(28, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bq5dj"]
+radius = 1.73205
+height = 18.384777
+
+[node name="carrot_crane" type="AnimatableBody2D" unique_id=1935309616]
+script = ExtResource("1_00hs5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642614633]
+texture = ExtResource("1_psths")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053873470]
+position = Vector2(-13, -15)
+shape = SubResource("SegmentShape2D_bq5dj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1669093736]
+position = Vector2(1, -24)
+rotation = 0.7853982
+shape = SubResource("CapsuleShape2D_bq5dj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=419941575]
+position = Vector2(-5, 0)
+rect = Rect2(-10, -32, 30, 79)
