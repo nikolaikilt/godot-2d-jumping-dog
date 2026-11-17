@@ -30,6 +30,7 @@ animations = [{
 height = 20.0
 
 [node name="Frog" type="CharacterBody2D" unique_id=1481729009]
+disable_mode = 1
 collision_layer = 2
 script = ExtResource("1_ybftx")
 

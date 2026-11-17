@@ -162,7 +162,6 @@ enemy_scenes = Array[PackedScene]([ExtResource("2_0tnpc"), ExtResource("3_0tnpc"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1954932048]
 stream = SubResource("AudioStreamOggVorbis_yqjtg")
-autoplay = true
 parameters/looping = false
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1923281675]

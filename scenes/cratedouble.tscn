@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c4n5q4xcla5bm"]
 
+[ext_resource type="Script" uid="uid://csjsuqvk423py" path="res://scenes/cratedouble.gd" id="1_q6uv1"]
 [ext_resource type="Texture2D" uid="uid://djqytl3uyniq2" path="res://assets/big-crate.png" id="1_rjp2j"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q6uv1"]
+b = Vector2(31, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q6uv1"]
 animations = [{
@@ -13,36 +17,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_4iptk"]
-b = Vector2(32, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_a6285"]
-a = Vector2(30, 32)
-b = Vector2(1, 32)
-
 [node name="cratedouble" type="AnimatableBody2D" unique_id=944600537]
+position = Vector2(27, 16)
+script = ExtResource("1_q6uv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=458800130]
+position = Vector2(-26, -14)
+shape = SubResource("SegmentShape2D_q6uv1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2017590966]
+position = Vector2(-13, 24)
+rect = Rect2(-14, -39, 31, 60)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1408843978]
-z_index = 1
-position = Vector2(1, 0)
+z_index = -1
+position = Vector2(-11, 1)
 sprite_frames = SubResource("SpriteFrames_q6uv1")
 animation = &"idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=508406373]
-z_index = 1
+z_index = -1
 position = Vector2(0, 31)
 sprite_frames = SubResource("SpriteFrames_q6uv1")
 animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659978082]
-position = Vector2(-15, -14)
-shape = SubResource("SegmentShape2D_4iptk")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2017590966]
-position = Vector2(0, 24)
-rect = Rect2(-14, -39, 31, 60)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1324227745]
-z_index = -1
-position = Vector2(-15, 14)
-shape = SubResource("SegmentShape2D_a6285")
