@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -230.0
 signal hit
 var fixed_x: float
 

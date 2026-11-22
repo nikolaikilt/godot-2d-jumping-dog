@@ -2,12 +2,13 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bmg4q41exdk0u"
-valid=false
+uid="uid://dgpcy8la8iyhq"
+path="res://.godot/imported/my_jumping_dog_ost.ogg-ef8250e894fe9be91e6928860ad1bd35.oggvorbisstr"
 
 [deps]
 
 source_file="res://assets/sounds/my_jumping_dog_ost.ogg"
+dest_files=["res://.godot/imported/my_jumping_dog_ost.ogg-ef8250e894fe9be91e6928860ad1bd35.oggvorbisstr"]
 
 [params]
 

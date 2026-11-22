@@ -101,11 +101,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 12.0
-height = 28.0
+radius = 9.0
+height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bq5dj"]
-radius = 8.0
+radius = 6.0
 
 [node name="player" type="CharacterBody2D" unique_id=1005019559]
 z_index = 1
@@ -114,18 +114,17 @@ platform_floor_layers = 4278190085
 script = ExtResource("1_3v2ag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220035201]
-position = Vector2(4.4999986, -2.0000007)
-scale = Vector2(1.2812499, 1.125)
+position = Vector2(-0.46093702, 0.99999976)
+scale = Vector2(0.99776787, 0.9375)
 sprite_frames = SubResource("SpriteFrames_bq5dj")
-animation = &"jump"
+animation = &"run"
 autoplay = "run"
-frame_progress = 0.67911166
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2143557320]
-position = Vector2(1, 4)
+position = Vector2(-4, 7)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=850624926]
-position = Vector2(11, -5)
+position = Vector2(4, 1)
 shape = SubResource("CircleShape2D_bq5dj")
