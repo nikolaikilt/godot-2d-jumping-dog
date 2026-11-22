@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dn6uvy5amvr8e" path="res://assets/gogo_sprites/jump/3jump1.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://drmdeio1w64rh" path="res://assets/gogo_sprites/run/runnew.png" id="4_qlg0r"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(70, 0, 35, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_dqkch")
 region = Rect2(0, 0, 32, 32)
@@ -28,10 +32,6 @@ region = Rect2(35, 0, 35, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_fjrip")
 region = Rect2(35, 0, 35, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("2_fjrip")
-region = Rect2(70, 0, 35, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("4_qlg0r")
@@ -73,6 +73,14 @@ region = Rect2(128, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}],
+"loop": 0,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tuyoq")
 }, {
 "duration": 1.0,
@@ -94,9 +102,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
 }],
 "loop": 0,
 "name": &"jump",
@@ -132,7 +137,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 8.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
@@ -152,10 +157,9 @@ script = ExtResource("1_3v2ag")
 position = Vector2(-0.46093702, 0.99999976)
 scale = Vector2(0.99776787, 0.9375)
 sprite_frames = SubResource("SpriteFrames_bq5dj")
-animation = &"jump"
+animation = &"run"
 autoplay = "run"
-frame = 2
-frame_progress = 1.0
+frame_progress = 0.02657992
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2143557320]
 position = Vector2(-4, 7)

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c4n5q4xcla5bm" path="res://scenes/cratedouble.tscn" id="4_vtaks"]
 [ext_resource type="PackedScene" uid="uid://wb2i2at2m6xc" path="res://scenes/carrot_crane.tscn" id="5_kvpfn"]
 [ext_resource type="AudioStream" uid="uid://dgpcy8la8iyhq" path="res://assets/sounds/my_jumping_dog_ost.ogg" id="6_dinhu"]
+[ext_resource type="FontFile" uid="uid://beyvqr6xm3s2i" path="res://assets/PixelOperator8.ttf" id="13_kvuet"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bq5dj"]
 
@@ -214,4 +215,61 @@ position = Vector2(63, 144)
 [node name="EnemyTimer" type="Timer" parent="." unique_id=94303163]
 autostart = true
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1821529400]
+
+[node name="Score" type="Label" parent="HUD" unique_id=214648789]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 25.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_kvuet")
+text = "0"
+
+[node name="Final Message" type="Label" parent="HUD" unique_id=321929976]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -16.0
+offset_right = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_kvuet")
+theme_override_font_sizes/font_size = 14
+text = "YOU SCORED:"
+horizontal_alignment = 1
+
+[node name="Final score" type="Label" parent="HUD" unique_id=868118107]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 8.5
+offset_right = 20.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_kvuet")
+text = "0"
+horizontal_alignment = 1
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=860529008]
+wait_time = 0.1
+autostart = true
+
+[node name="SpeedTime" type="Timer" parent="." unique_id=620639730]
+
+[connection signal="hit" from="player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="SpeedTime" to="." method="_on_speed_time_timeout"]
