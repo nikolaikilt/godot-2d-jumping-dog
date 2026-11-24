@@ -33,6 +33,7 @@ frame_progress = 0.2768196
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892547122]
 position = Vector2(-15, -14)
 shape = SubResource("SegmentShape2D_ybftx")
+one_way_collision = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1810443378]
 position = Vector2(-1, -6)

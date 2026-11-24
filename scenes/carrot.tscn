@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://soj4w8mq1uao"]
+
+[ext_resource type="Texture2D" uid="uid://3338mbnerawt" path="res://assets/CARROT.png" id="1_btq7l"]
+[ext_resource type="Script" uid="uid://oxvkltbhwd1u" path="res://scenes/carrot.gd" id="1_elckd"]
+[ext_resource type="AudioStream" uid="uid://cr8huv0w1j1ji" path="res://assets/sounds/carrot.ogg" id="3_mb1r7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bq5dj"]
+radius = 2.1213207
+height = 19.79899
+
+[node name="carrot" type="Area2D" unique_id=1499362317]
+script = ExtResource("1_elckd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=31380320]
+texture = ExtResource("1_btq7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330181749]
+position = Vector2(1.000001, -23)
+rotation = 1.0471976
+shape = SubResource("CapsuleShape2D_bq5dj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=607436266]
+position = Vector2(1, -25)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2083054930]
+stream = ExtResource("3_mb1r7")
+volume_db = 1.0
+pitch_scale = 1.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

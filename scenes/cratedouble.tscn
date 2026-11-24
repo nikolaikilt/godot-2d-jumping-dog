@@ -22,8 +22,9 @@ position = Vector2(27, 16)
 script = ExtResource("1_q6uv1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=458800130]
-position = Vector2(-26, -14)
+position = Vector2(-26, -13)
 shape = SubResource("SegmentShape2D_q6uv1")
+one_way_collision = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2017590966]
 position = Vector2(-13, 24)

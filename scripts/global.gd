@@ -5,3 +5,4 @@ const global_position_player = 63
 var enemy_instance_name = ""
 var prev_enemy_instance_name = ""
 var counter = false
+var score = 0
