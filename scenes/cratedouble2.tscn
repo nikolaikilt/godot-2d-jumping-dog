@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bq1m5p1eh530w"]
+
+[ext_resource type="Script" uid="uid://csjsuqvk423py" path="res://scenes/cratedouble.gd" id="1_4gdrh"]
+[ext_resource type="Texture2D" uid="uid://djqytl3uyniq2" path="res://assets/big-crate.png" id="2_jlfyi"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q6uv1"]
+b = Vector2(62, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6uv1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jlfyi")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="cratedouble" type="AnimatableBody2D" unique_id=944600537]
+position = Vector2(27, 16)
+script = ExtResource("1_4gdrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=458800130]
+position = Vector2(-26, -13)
+shape = SubResource("SegmentShape2D_q6uv1")
+one_way_collision = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2017590966]
+position = Vector2(-13, 24)
+rect = Rect2(-14, -39, 64, 60)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1408843978]
+z_index = -1
+position = Vector2(-11, 1)
+sprite_frames = SubResource("SpriteFrames_q6uv1")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=508406373]
+z_index = -1
+position = Vector2(0, 31)
+sprite_frames = SubResource("SpriteFrames_q6uv1")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/AnimatedSprite2D" unique_id=584991567]
+z_index = -1
+position = Vector2(32, -31)
+sprite_frames = SubResource("SpriteFrames_q6uv1")
+animation = &"idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/AnimatedSprite2D/AnimatedSprite2D" unique_id=1215186059]
+z_index = -1
+position = Vector2(0, 31)
+sprite_frames = SubResource("SpriteFrames_q6uv1")
+animation = &"idle"

@@ -12,15 +12,16 @@ height = 19.79899
 script = ExtResource("1_elckd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=31380320]
+position = Vector2(0, -4)
 texture = ExtResource("1_btq7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1330181749]
-position = Vector2(1.000001, -23)
+position = Vector2(1.000001, -26)
 rotation = 1.0471976
 shape = SubResource("CapsuleShape2D_bq5dj")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=607436266]
-position = Vector2(1, -25)
+position = Vector2(1, -28)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2083054930]
 stream = ExtResource("3_mb1r7")

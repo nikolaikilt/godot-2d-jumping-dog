@@ -6,3 +6,4 @@ var enemy_instance_name = ""
 var prev_enemy_instance_name = ""
 var counter = false
 var score = 0
+var life = 3

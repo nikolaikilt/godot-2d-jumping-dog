@@ -41,15 +41,3 @@ z_index = -1
 position = Vector2(0, 31)
 sprite_frames = SubResource("SpriteFrames_q6uv1")
 animation = &"idle"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/AnimatedSprite2D" unique_id=584991567]
-z_index = -1
-position = Vector2(32, -31)
-sprite_frames = SubResource("SpriteFrames_q6uv1")
-animation = &"idle"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/AnimatedSprite2D/AnimatedSprite2D" unique_id=1215186059]
-z_index = -1
-position = Vector2(0, 31)
-sprite_frames = SubResource("SpriteFrames_q6uv1")
-animation = &"idle"

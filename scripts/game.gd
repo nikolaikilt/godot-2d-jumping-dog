@@ -7,7 +7,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HUD/Score.add_theme_color_override("font_color","White")
-
+	$HUD/lives.play("3")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,10 +23,10 @@ func _on_enemy_timer_timeout() -> void:
 		Global.prev_enemy_instance_name = Global.enemy_instance_name
 	Global.enemy_instance_name = enemy_instance.name
 	Global.counter = true
-	if enemy_instance.name == "cratedouble" :
-		enemy_instance.position = Vector2(187,120)
+	if enemy_instance.name == "cratedouble" or enemy_instance.name == "cratedouble2"  :
+		enemy_instance.position = Vector2(187,115)
 	else: 
-		enemy_instance.position = Vector2(187,150)
+		enemy_instance.position = Vector2(187,148)
 	add_child(enemy_instance)
 	
 
@@ -35,7 +35,7 @@ func _on_bonus_timer_timeout() -> void:
 	var bonus_scene = bonus_scenes.pick_random()
 	var bonus_instance = bonus_scene.instantiate()
 	
-	if bonus_instance.name == "cratedouble_carrot" :
+	if bonus_instance.name == "carrot2" :
 		bonus_instance.position = Vector2(187,120)
 	else: 
 		bonus_instance.position = Vector2(187,150)
@@ -44,18 +44,35 @@ func _on_bonus_timer_timeout() -> void:
 	
 
 func _on_player_hit() -> void:
-	$ScoreTimer.stop()
-	$HUD/Score.hide()
-	$"HUD/Final Message".show()
-	$"HUD/Final score".text = str(Global.score)
-	$"HUD/Final score".show()
-	$BackgroundMusic.pitch_scale = 0.4
-	Engine.time_scale = 0.1
-	await get_tree().create_timer( 3 *Engine.time_scale).timeout
-	#ricarico la scena corrente
-	Global.score = 0
-	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	if Global.life == 0:
+		$HUD/lives.hide()
+		$ScoreTimer.stop()
+		$HUD/Score.hide()
+		$"HUD/Final Message".show()
+		$"HUD/Final score".text = str(Global.score)
+		$"HUD/Final score".show()
+		$BackgroundMusic.pitch_scale = 0.4
+		Engine.time_scale = 0.1
+		await get_tree().create_timer( 3 *Engine.time_scale).timeout
+		#ricarico la scena corrente
+		Global.life = 3
+		$HUD/lives.play("3")
+		Global.score = 0
+		Engine.time_scale = 1
+		get_tree().reload_current_scene()
+		return
+	if Global.life == 1:
+		$HUD/lives.play("0")
+		Global.life = 0
+		return
+	if Global.life == 2:
+		$HUD/lives.play("1")
+		Global.life = 1
+		return
+	if Global.life == 3:
+		$HUD/lives.play("2")
+		Global.life = 2
+		return
 	
 
 

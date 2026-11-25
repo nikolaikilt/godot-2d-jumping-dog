@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -250.0
 signal hit
 signal bonus
 
@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		if collider is CharacterBody2D :
 			hit.emit()
+			collider.queue_free()
 		
 			
 	
