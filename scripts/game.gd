@@ -2,7 +2,9 @@ extends Node
 
 @export var enemy_scenes: Array[PackedScene]
 @export var bonus_scenes: Array[PackedScene]
+@export var eagle_scene: PackedScene
 
+var eagle_position_y: Array[int] =  [0,10,25,25,40]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +18,6 @@ func _process(delta: float) -> void:
 
 
 func _on_enemy_timer_timeout() -> void:
-	
 	var enemy_scene = enemy_scenes.pick_random()
 	var enemy_instance = enemy_scene.instantiate()
 	if Global.counter:
@@ -64,14 +65,17 @@ func _on_player_hit() -> void:
 	if Global.life == 1:
 		$HUD/lives.play("0")
 		Global.life = 0
+		$life_loss.play()
 		return
 	if Global.life == 2:
 		$HUD/lives.play("1")
 		Global.life = 1
+		$life_loss.play()
 		return
 	if Global.life == 3:
 		$HUD/lives.play("2")
 		Global.life = 2
+		$life_loss.play()
 		return
 	
 
@@ -84,3 +88,8 @@ func _on_score_timer_timeout() -> void:
 func _on_speed_time_timeout() -> void:
 	Engine.time_scale += 0.01
 	
+func _on_boss_timer_timeout() -> void:
+	var eagle_instance = eagle_scene.instantiate()
+	eagle_instance.position.x = 128
+	eagle_instance.position.y = eagle_position_y.pick_random()
+	add_child(eagle_instance)

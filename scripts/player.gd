@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("click") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump")
+		$jump.play()
+		
 	
 	velocity.x = 0.0
 	move_and_slide()

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chbws2gvm7pow" path="res://assets/gogo_sprites/idle/idlenew.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dn6uvy5amvr8e" path="res://assets/gogo_sprites/jump/3jump1.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://drmdeio1w64rh" path="res://assets/gogo_sprites/run/runnew.png" id="4_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://bqhs4170rt1ix" path="res://assets/sounds/jump.ogg" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
 atlas = ExtResource("2_fjrip")
@@ -181,3 +182,8 @@ shape = SubResource("SegmentShape2D_bq5dj")
 position = Vector2(7, -2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_bq5dj")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=1034732498]
+stream = ExtResource("5_qlg0r")
+volume_db = -27.0
+pitch_scale = 4.0
