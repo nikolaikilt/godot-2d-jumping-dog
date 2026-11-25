@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ybftx"]
-b = Vector2(32, 0)
+b = Vector2(62, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bq5dj"]
 b = Vector2(31, 0)
@@ -30,14 +30,20 @@ sprite_frames = SubResource("SpriteFrames_bq5dj")
 animation = &"idle"
 frame_progress = 0.2768196
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1842847832]
+position = Vector2(32, 0)
+sprite_frames = SubResource("SpriteFrames_bq5dj")
+animation = &"idle"
+frame_progress = 0.2768196
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892547122]
 position = Vector2(-15, -14)
 shape = SubResource("SegmentShape2D_ybftx")
 one_way_collision = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1810443378]
-position = Vector2(-1, -6)
-rect = Rect2(-14, -10, 31, 31)
+position = Vector2(39, -6)
+rect = Rect2(-54, -10, 63, 31)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=956548261]
 z_index = -1
